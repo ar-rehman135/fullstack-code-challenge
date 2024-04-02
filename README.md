@@ -1,46 +1,93 @@
-# Limbic AI - Project Setup Overview
+# Limbic Fullstack Code Challenge
 
-This document outlines the setup and configuration for a web application project consisting of a Next.js frontend, a Node.js backend using TypeScript, and a PostgreSQL database. It details both Docker-based and non-Docker setups.
+This is Limbic’s FullStack Challenge that combines bits from the frontend and backend challenges in one.
 
-## Components
+Jane is a clinical therapist and wants her clients to answer simple questionnaires in order to better understand them. She needs a way to add/delete/edit questions and also see the answers of each client.
 
-- **Frontend**: Next.js
-- **Backend**: Node.js with TypeScript
-- **Database**: PostgreSQL
+## Backend 
 
-## Docker Setup
+You are tasked with writing an API to create/edit/delete Users, Questions, and Answers. It should be a NodeJS/ExpressJS server with the following endpoints:
 
-### Starting with Docker
+- Return all the users. (No need for other user endpoints, just create a sample set of users locally or in the db if you choose one)
+- Create a new Question
+- Edit a Question
+- Delete a Question
+- Create a user Answer
+- Edit a user Answer
+- Delete a user Answer
+- Return all the answers of a user
 
-1. **Docker Compose**: Use `docker-compose` to orchestrate the containers for each service.
-   - PostgreSQL is set up with an initialization script (`init-db.sql`) to configure the database schema and seed data.
-   - Next.js and Node.js apps are built and run in their respective containers, ensuring they wait for the PostgreSQL database to be fully ready before starting.
+**Stack Options:**
 
-### How to Run
+1. TypeScript, NodeJS, Apollo GraphQL, Jest / Mocha-Chai
+2. TypeScript, NodeJS, ExpressJS, Jest / Mocha-Chai
 
-- Execute `docker-compose up --build` in the terminal. This command builds the images and starts the containers defined in the `docker-compose.yml` file.
+🔎 **Things we're looking for:**
 
-## Non-Docker Setup
+It should be production quality as you understand it, i.e. tests, Docker, README, documentation, etc.
 
-### Backend Setup (Node.js with TypeScript)
+- TypeScript
+- Project Structure
+- Unit Tests
+- API Design
+- Error Handling
 
-1. **Installation**: Ensure Node.js is installed on your system.
-2. **Dependencies**: Navigate to frontend and backend project directory and run `npm install` to install required packages.
-3. **Running the Application**: Start the application with `npm run dev`.
+🏆 **BIG PLUS:**
 
-### Frontend Setup (Next.js)
+We don't care for data persistence at this point so you could just save everything in variables locally, but it's a big plus if you can also **save and read the data from a MongoDB or PostgreSQL database.**
 
-1. **Installation**: Ensure Node.js is installed on your system.
-2. **Dependencies**: Navigate to your Next.js project directory and run `npm install`.
-3. **Running the Application**: Start the development server with `npm run dev`.
+## Frontend
 
-### Database Setup (PostgreSQL)
+You are tasked with writing a React/React Native app to consume the backend API. Your app should be able to complete the following tasks:
 
-1. **Installation**: Install PostgreSQL on your system.
-2. **Database Creation**: Create a new database for your application.
-3. **Initialization**: Use the `psql` command-line tool to execute your SQL schema and seed data scripts.
+- See a list of users
+- See a list of questions
+- add a new question
+- edit a question
+- delete a question
+- see all the answers of a user
+- add a new answer
+- delete an answer
 
-## Environment Configuration
+🔎 **Things we're looking for:**
 
-- Configure environment variables for database connection details (`DATABASE_HOST`, `DATABASE_USER`, `DATABASE_PASSWORD`, etc.) in your backend application.
-- For the frontend, setup any API endpoints or other environment-specific configurations required for the Next.js app.
+- TypeScript
+- Project Structure
+- Components Structure
+- State Management
+- Separation of concerns
+- Data Handling
+
+🏆 **BIG PLUS:**
+
+You can use anything you want for state management. We use MobX and the Context API a lot so it's a big plus if you can also **implement some/all of the state handling with MobX and Context API**.
+
+
+## Instructions
+
+1. **Submitting Code**
+
+   **Option A:**
+
+   - Fork this repo
+   - Issue a Pull Request on the repo when you're ready to start. This will count as your starting date.
+   - For the frontend, setup your development environment for React or React Native in a **frontend** folder
+   - For the backend, setup your development environment for NodeJS with ExpressJS in a **backend** folder
+   - Implement your solution on each end
+   - Commit your changes into the forked repo
+
+   **Option B:**
+
+   - For the frontend, setup your development environment for React or React Native in a **frontend** folder
+   - For the backend, setup your development environment for NodeJS with ExpressJS in a **backend** folder
+   - Implement your solution for each end
+   - Archive the **frontend** and **backend** folders into a zip file
+   - Send us the zip file. We should be able to extract the content of each folder and run it from there (w/o node_modules)
+
+2. **Deadline:**
+
+   You have 1 week to complete as much tasks as you can from the challenge below. Countdown starts from date you issued the PR or from the date you were invited to complete this challenge via email
+
+3. **Implementation:**
+
+   There is no correct way to do the challenge, you are free to add whatever libraries you like besides the ones mentioned below. We want to see what you come up with on your own.
